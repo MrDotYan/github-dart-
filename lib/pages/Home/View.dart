@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Controller.dart';
+import 'Model.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -48,7 +49,7 @@ class _HomeState extends State<Home> {
                                   .builder(Icons.arrow_right, "查看"),
                               onTap: () {
                                 Get.toNamed('/second',
-                                    arguments: UModel(
+                                    arguments: MyModel(
                                         data[index]["owner"]["url"],
                                         data[index]["reponame"]));
                               },
@@ -73,10 +74,4 @@ class RowContainer {
       ),
     );
   }
-}
-
-class UModel {
-  String url;
-  String title;
-  UModel(this.url, this.title);
 }
